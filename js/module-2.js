@@ -65,36 +65,90 @@
 // Напиши скрипт, який «розгортає» рядок (зворотний порядок букв) і виводить його в консоль.
 
 // const string = 'Welcome to the future';
+// let newString = ""
+// for (let  i = string.length-1; i >= 0; i --) {
+//     newString += string[i];
+   
+// }
+// console.log(newString)
+
 // Example 7 - Сортування масиву із циклом
 // Напиши скрипт сортування масиву рядків в алфавітному порядку за першою літерою елемента.
 
 // const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
+// console.log(langs.sort())
+
+
 // Example 8 - Пошук елемента
 // Напиши скрипт пошуку найменшого числа у масиві. Код повинен працювати для будь-якого масиву чисел. Використовуй цикл для розв'язання задачі.
 
 // const numbers = [2, 17, 94, 1, 23, 37];
-// let min;
+// let min = numbers[0];
+
+// for (let i = 0; i < numbers.length; ++i ) {
+// if (numbers[i] < min) {
+//     min = numbers[i]
+// }
+// }
+
+// console.log(min)
+
 // Example 9 - Reverse
 // Розгорни масив у зворотному порядку. Будь ласка, не використовуйте array.reverse(), щоб зробити завдання більш цікавим.
 
 // const numbers = [2, 17, 94, 1, 23, 37];
+// const reversed = numbers.reverse();
+// console.log(reversed)
+
+// let newNumbers = "";
+// for (let i = numbers.length - 1; i >= 0; i --) {
+//     newNumbers += numbers[i]
+// }
+// console.log(newNumbers)
+
 // Example 10 - Fill
 // Напишіть код, який заповнює новий масив наданим значенням.
 
 // Очікуваний результат: (3, 'a') => ['a', 'a', 'a']
 // const arraySize = 3;
 // const valueToFill = 'a';
+
+// const arrValue = valueToFill.split();
+
+// arrValue[1] = "a";
+// arrValue[2] = "a"
+
+// console.log(arrValue);
+
+
 // Example 11 - Compact
 // Напишіть код, який очищає масив від небажаних значень, таких як false, undefined, пусті рядки, нуль, null.
 
 // Очікуваний результат: [0, 1, false, 2, undefined, '', 3, null] => [1, 2, 3]
 // const data = [0, 1, false, 2, undefined, '', 3, null];
+// console.log(data.filter(Number))
+
+
+// let result = [];
+// for (const item of data) {
+//     if (item) {
+// result.push(item)
+//     }
+// }
+// console.log(result)
+
 // Example 12 - Without
 // Напишіть код, який повертає новий масив без наданих значень. Використовуйте примітивні типи.
 
 // Очікуваний результат: [1, 2, 3, 1, 2] без 1 => [2, 3, 2]
 // const data = [1, 2, 3, 1, 2];
 // const charToDelete = 1;
+
+// for (const number of data) {
+//     number !== charToDelete && console.log(number) 
+// }
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Example 13 - Sum
 // Напишіть код, який поверне суму рядка
 
@@ -102,6 +156,17 @@
 // Очікуваний результат: 56349 => 27
 // const digitSum1 = 4367;
 // const digitSum2 = 56349;
+
+// let sum = [digitSum1];
+
+
+// for (let i = 0; i <= digitSum1; i +=1 ) {
+//     sum += i
+//     break
+// }
+// console.log(sum)
+
+
 
 // Модуль 2. Заняття 4. Функції
 // Example 1 - Індекс маси тіла
