@@ -1,17 +1,27 @@
 // Модуль 2. Заняття 3. Масиви
+
 // Example 1 - Базові операції з масивом
+
 // Створіть масив genres з елементами «Jazz» та «Blues».
 // Додайте «Рок-н-рол» до кінця.
 // Виведіть у консоль перший елемент масиву.
 // Виведіть у консоль останній елемент масиву. Код повинен працювати для масиву довільної довжини.
 // Видаліть перший елемент та виведіть його в консоль.
 // Вставте «Country» та «Reggae» на початок масиву.
+
 // const genres = ["Jazz", "Blues"];
 // genres.push("Рок-н-рол");
 // console.log(genres);
 // console.log(genres[0]);
 // console.log(genres[genres.length-1]);
+
+// genres.shift()
+// console.log(genres);
+
 // console.log(genres.slice(0,1));
+
+// genres.unshift("Country", "Reggae")
+
 // genres.splice(0, 0, "Country", "Reggae");
 // console.log(genres)
 // console.table(genres)
@@ -23,7 +33,7 @@
 // const total = values.split(" ");
 // const sum = Number(total[0] * Number(total[1]))
 
-// console.log(total);
+// // console.log(total);
 // console.log(sum);
 
 // Example 3 - Перебір масиву
@@ -59,13 +69,12 @@
 // Example 6 - Масиви та рядки
 // Напиши скрипт, який «розгортає» рядок (зворотний порядок букв) і виводить його в консоль.
 
-// const string = 'Welcome to the future';
-// let newString = ""
-// for (let  i = string.length-1; i >= 0; i --) {
-//     newString += string[i];
-
+// const string = "Welcome to the future";
+// let newString = "";
+// for (let i = string.length - 1; i >= 0; i--) {
+//   newString += string[i];
 // }
-// console.log(newString)
+// console.log(newString);
 
 // Example 7 - Сортування масиву із циклом
 // Напиши скрипт сортування масиву рядків в алфавітному порядку за першою літерою елемента.
@@ -77,14 +86,20 @@
 // Напиши скрипт пошуку найменшого числа у масиві. Код повинен працювати для будь-якого масиву чисел. Використовуй цикл для розв'язання задачі.
 
 // const numbers = [2, 17, 94, 1, 23, 37];
+
+// // console.log(Math.min(...numbers));
+
 // let min = numbers[0];
 
-// for (let i = 0; i < numbers.length; ++i ) {
-// if (numbers[i] < min) {
-//     min = numbers[i]
-// }
-// }
+// for (let i = 0; i < numbers.length; i += 1) {
+//     // или
+//     // numbers[i] += min;
 
+// //     или
+// //   if (numbers[i] < min) {
+// //     min = numbers[i];
+// //   }
+// }
 // console.log(min)
 
 // Example 9 - Reverse
@@ -94,36 +109,50 @@
 // const reversed = numbers.reverse();
 // console.log(reversed)
 
-// let newNumbers = "";
-// for (let i = numbers.length - 1; i >= 0; i --) {
-//     newNumbers += numbers[i]
+// let newNumbers = '';
+// for (let i = numbers.length - 1; i >= 0; i--) {
+//   newNumbers += numbers[i];
 // }
-// console.log(newNumbers)
+// console.log(newNumbers.split(''));
 
 // Example 10 - Fill
 // Напишіть код, який заповнює новий масив наданим значенням.
 
 // Очікуваний результат: (3, 'a') => ['a', 'a', 'a']
-// const arraySize = 3;
+
+// const massive = ["a"];
+// massive.push("a", "a")
+
+// console.log(massive)
+
+// или
 // const valueToFill = 'a';
-
 // const arrValue = valueToFill.split();
-
 // arrValue[1] = "a";
 // arrValue[2] = "a"
-
 // console.log(arrValue);
 
 // Example 11 - Compact
 // Напишіть код, який очищає масив від небажаних значень, таких як false, undefined, пусті рядки, нуль, null.
 
 // Очікуваний результат: [0, 1, false, 2, undefined, '', 3, null] => [1, 2, 3]
+
 // const data = [0, 1, false, 2, undefined, '', 3, null];
 // console.log(data.filter(Number))
 
+// или
 // let result = [];
 // for (const item of data) {
 //     if (item) {
+// result.push(item)
+//     }
+// }
+// console.log(result)
+
+// оставляем не числа
+// let result = [];
+// for (const item of data) {
+//     if (!item) {
 // result.push(item)
 //     }
 // }
@@ -134,10 +163,10 @@
 
 // Очікуваний результат: [1, 2, 3, 1, 2] без 1 => [2, 3, 2]
 // const data = [1, 2, 3, 1, 2];
-// const charToDelete = 1;
+// const dataToDelete = 1;
 
 // for (const number of data) {
-//     number !== charToDelete && console.log(number)
+//     number !== dataToDelete && console.log(number)
 // }
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -146,16 +175,15 @@
 
 // Очікуваний результат: 4367 => 20
 // Очікуваний результат: 56349 => 27
+
 // const digitSum1 = 4367;
 // const digitSum2 = 56349;
 
-// let sum = [digitSum1];
+// const digit = [digitSum1]
 
-// for (let i = 0; i <= digitSum1; i +=1 ) {
-//     sum += i
-//     break
-// }
-// console.log(sum)
+// console.log(digitSum1.split(" "));
+
+// // console.log(sum2);
 
 // Модуль 2. Заняття 4. Функції
 // Example 1 - Індекс маси тіла
@@ -165,39 +193,35 @@
 
 // Індекс маси тіла необхідно округлити до однієї цифри після коми;
 
-// console.log(bmi); // 28.8
-
-// function calcBMI (weight, height) {
-//     const normalizeWeight = Numder.parseFloat(weight.replace(",", "."));
-//     const normalizeHeight = Numder.parseFloat(height.replace(",", "."));
-//     const BMI = normalizeWeight / Math.pow(normalizeHeight,2);
-
-//     return BMI.toFixed(1)
+// function calcBMI(weight, height) {
+//   const normalizeWeight = Number(weight.replace(',', '.'));
+//   const normalizeHeight = Number(height);
+//   const bmi = normalizeWeight / normalizeHeight ** 2;
+//   return bmi.toFixed(1);
 // }
 
-// const mangoBMI = calcBMI ("88,3", "1.75");
-
-// console.log(mangoBMI)
+// console.log(calcBMI("88,3", "1.75")); // 28.8
 
 // Example 2 - Найменше з чисел
 // Напиши функцію min(a,b), яка повертає найменше з чисел a та b.
 
-// function min(a,b) {
-//     if (typeof a !== "number" || typeof b !== "number") {
-//         return "Один із параметрів не число"
-//     }
+// function min(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     return "Один із параметрів не число";
+//   }
 
-// if (a < b) {
+//   if (a < b) {
 //     return a;
-// } else {
+//   } else {
 //     return b;
-// }
+//   }
+// или
+//   if (a < b) {
+//       return a;
+//   }   return b;
 
-// // if (a < b) {
-// //     return a;
-// // }   return b;
-
-// // return a < b ? a : b;
+// или
+//   return a < b ? a : b;
 // }
 
 // console.log(min(2, 5)); // 2
@@ -221,7 +245,7 @@
 // Наприклад для першого елемента масиву ['Mango', 'Poly', 'Ajax'] з індексом 0 буде виведено 1 - Mango, а для індексу 2 виведе 3 - Ajax.
 
 // function logItems(items) {
-//     for (let i = 0; i < items.length; i ++) {
+//     for (let i = 0; i < items.length; i+=1) {
 //         console.log(`${i + 1} : ${items[i]}`);
 //     }
 // }
@@ -232,7 +256,10 @@
 // Example 5 - Логування контактів
 // Напиши функцію printContactsInfo(names, phones) яка виводить у консоль ім'я та телефонний номер користувача. У параметри names та phones будуть передані рядки імен та телефонних номерів, розділені комами. Порядковий номер імен та телефонів у рядках вказують на відповідність. Кількість імен та телефонів гарантовано однакова.
 
-// function printContactsInfo(names, phones) {}
+// function printContactsInfo(names, phones) {
+//     for (let i=0; i < items.length; i +=1)
+//     console.log(`${items[i]}`)
+// }
 
 // printContactsInfo(
 //   'Jacob,William,Solomon,Artemis',
@@ -242,110 +269,175 @@
 // Example 6 - Середнє значення
 // Напишіть функцію calAverage() яка приймає довільну кількість аргументів і повертає їхнє середнє значення. Усі аргументи будуть лише числами.
 
-// function calAverage() {}
+// let total = 0;
+// function calAverage() {
+//   console.log(arguments);
+//   let sum = 0;
+//   for (const argument of arguments) {
+//     sum += argument;
+//   }
+//   return sum / arguments.length;
+// }
 
 // console.log(calAverage(1, 2, 3, 4)); // 2.5
 // console.log(calAverage(14, 8, 2)); // 8
 // console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
+
 // Example 7 - Форматування часу
 // Напиши функцію formatTime(minutes) яка переведе значення minutes (кількість хвилин) у рядок у форматі годин та хвилин HH:MM.
 
-// function formatTime(minutes) {}
+// function formatTime(minutes) {
+// const newMinutes = minutes % 60;
+// const hours = Math.round(minutes / 60);
+// }
 
 // console.log(formatTime(70)); // "01:10"
 // console.log(formatTime(450)); // "07:30"
 // console.log(formatTime(1441)); // "24:01"
+
+
+
 // Example 8 - Колекція курсів (includes, indexOf, push і т. д.)
 // Напишіть функції для роботи з колекцією навчальних курсів courses:
 
 // addCourse(name) - додає курс до кінця колекції
 // removeCourse(name) - видаляє курс із колекції
 // updateCourse(oldName, newName) - змінює ім'я на нове
-// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+// const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
 
-// addCourse('Express');
+// function addCourse(name) {
+//   courses.push(name);
+
+// }
+
+// addCourse("Express");
 // console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
-// addCourse('CSS'); // 'Ви вже маєте такий курс'
+// addCourse("CSS"); // 'Ви вже маєте такий курс'
 
-// removeCourse('React');
+// function removeCourse(name) {
+//   if (name.indexOf(name) === -1) {
+//     return;
+//   } else {
+//     courses.splice(courses.indexOf(name), 1);
+//   }
+// }
+
+// removeCourse("React");
 // console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
-// removeCourse('Vue'); // 'Курс із таким ім'ям не знайдено'
+// removeCourse("Vue"); // 'Курс із таким ім'ям не знайдено'
 
-// updateCourse('Express', 'NestJS');
+// function updateCourse(oldName, newName) {
+//   if (name.indexOf(oldName) === -1) {
+//     return;
+//   } else {
+//     courses.splice(courses.indexOf(oldName), 1, newName);
+//   }
+// }
+
+// updateCourse("Express", "NestJS");
 // console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
+
 // Example 9
 // Напиши скрипт підрахунку вартості гравіювання прикрас. Для цього створи функцію calculateEngravingPrice(message, pricePerWord) приймаючу рядок (в рядку будуть тільки слова і прогалини) і ціну гравіювання одного слова, і повертає ціну гравіювання всіх слів в рядку.
 
 // const calculateEngravingPrice = function (message, pricePerWord) {
-//   // твій код
+//   let words = message.split(" ");
+//   let sum = words.length * pricePerWord;
+//   return sum;
 // };
 
-// /*
-//  * Виклич функції для перевірки працездатності твоєї реалізації.
-//  */
+// // /*
+// //  * Виклич функції для перевірки працездатності твоєї реалізації.
+// //  */
 // console.log(
 //   calculateEngravingPrice(
-//     'Proin sociis natoque et magnis parturient montes mus',
+//     "Proin sociis natoque et magnis parturient montes mus",
 //     10
 //   )
 // ); // 80
 
 // console.log(
 //   calculateEngravingPrice(
-//     'Proin sociis natoque et magnis parturient montes mus',
+//     "Proin sociis natoque et magnis parturient montes mus",
 //     20
 //   )
 // ); // 160
 
 // console.log(
-//   calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40)
+//   calculateEngravingPrice("Donec orci lectus aliquam est magnis", 40)
 // ); // 240
 
 // console.log(
-//   calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20)
+//   calculateEngravingPrice("Donec orci lectus aliquam est magnis", 20)
 // ); // 120
+
 // Example 10
 // Напиши функцію findLongestWord(string), яка приймає параметром довільний рядок (в рядку будуть тільки слова і прогалини) і повертає найдовше слово в цьому рядку.
 
 // const findLongestWord = function (string) {
-//   // твій код
+//   let arrayOfString = string.split(" ");
+//   let theLongestWord = arrayOfString[0];
+//   for (const element of arrayOfString) {
+//     console.log(element.length);
+
+//     if (element.length > theLongestWord.length) {
+//       return (theLongestWord = element);
+//     }
+//   }
+//  return theLongestWord;
 // };
 
 // /*
 //  * Виклич функції для перевірки працездатності твоєї реалізації.
 //  */
-// console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
+// console.log(findLongestWord("The quick brown fox jumped over the lazy dog")); // 'jumped'
 
-// console.log(findLongestWord('Google do a roll')); // 'Google'
+// console.log(findLongestWord("Google do a roll")); // 'Google'
 
-// console.log(findLongestWord('May the force be with you')); // 'force'
+// console.log(findLongestWord("May the force be with you")); // 'force'
+
 // Example 11
 // Напиши функцію formatString(string) яка приймає рядок і форматує його якщо необхідно.
 
 // Якщо довжина рядка не перевищує 40 символів, функція повертає її в початковому вигляді. Якщо довжина більше 40 символів, то функція обрізає рядок до 40-ка символів і додає в кінець рядка три крапки '...', після чого повертає укорочену версію
 
 // const formatString = function (string) {
-//   // твій код
-// };
+//   let lengthString = string.length;
+//   if (lengthString > 40) {
+//     string.slice(0, 40) + "...";
+//     return string.slice(0, 40) + "...";
+//   } return string
+// }
+
+// // или
+
+// (function formatString (string) {
+//     let lengthString = string.length;
+//     if (lengthString > 40) {
+//       string.slice(0, 40) + "...";
+//       return string.slice(0, 40) + "...";
+//     } return string
+//   })
 
 // /*
 //  * Виклич функції для перевірки працездатності твоєї реалізації.
 //  */
-// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// console.log(formatString("Curabitur ligula sapien, tincidunt non."));
 // // повернеться оригінальний рядок
 
-// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
 // // повернеться форматований рядок
 
-// console.log(formatString('Curabitur ligula sapien.'));
+// console.log(formatString("Curabitur ligula sapien."));
 // // повернеться оригінальний рядок
 
 // console.log(
 //   formatString(
-//     'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'
+//     "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
 //   )
 // );
-// // повернеться форматований рядок
+// повернеться форматований рядок
+
 // Example 12
 // Є масив logins з логінами користувачів. Напиши скрипт додавання логіна в масив logins. Логін, який додається повинен:
 
@@ -365,27 +457,44 @@
 
 // isLoginUnique тільки перевіряє чи є такий логін в масиві і повертає true або false. isLoginValid тільки перевіряє чи валідний логін і повертає true або false. addLogin додають чи не додають логін в масив. При цьому для перевірок умови додавання використовує результати викликів інших функцій - isLoginUnique і isLoginValid.
 
-// const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+// const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
 // const isLoginValid = function (login) {
-//   // твій код
+//   if (login.length >= 4 && login.length < 16) {
+//     return true;
+//   }
+//   return false;
 // };
 
 // const isLoginUnique = function (allLogins, login) {
-//   // твій код
+//   if (allLogins.includes(login)) {
+//     return false;
+//   }
+//   return true;
 // };
 
 // const addLogin = function (allLogins, login) {
-//   // твій код
+//   console.log(allLogins);
+
+//   if (isLoginValid(login) && isLoginUnique(allLogins, login)) {
+//     logins.push(login);
+//     return "Логін успішно доданий!";
+//   }
+//   if (!isLoginValid(login)) {
+//     return "Помилка! Логін повинен бути від 4 до 16 символів";
+//   }
+//   if (!isLoginUnique(allLogins, login)) {
+//     return "Такий логін вже використовується!";
+//   }
 // };
 
 // /*
 //  * Виклич функції для перевірки працездатності твоєї реалізації.
 //  */
-// console.log(addLogin(logins, 'Ajax')); // 'Логін успішно доданий!'
-// console.log(addLogin(logins, 'robotGoogles')); // 'Такий логін вже використовується!'
-// console.log(addLogin(logins, 'Zod')); // 'Помилка! Логін повинен бути від 4 до 16 символів'
-// console.log(addLogin(logins, 'jqueryisextremelyfast')); // 'Помилка! Логін повинен бути від 4 до 16 символів'
+// console.log(addLogin(logins, "Ajax")); // 'Логін успішно доданий!'
+// console.log(addLogin(logins, "robotGoogles")); // 'Такий логін вже використовується!'
+// console.log(addLogin(logins, "Zod")); // 'Помилка! Логін повинен бути від 4 до 16 символів'
+// console.log(addLogin(logins, "jqueryisextremelyfast")); // 'Помилка! Логін повинен бути від 4 до 16 символів'
 
 // Задача 13.
 
@@ -406,4 +515,3 @@
 // }
 
 // console.log(total);
-
