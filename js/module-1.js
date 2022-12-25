@@ -9,19 +9,22 @@
 // const diff = grapes - apples;
 // console.log(diff);
 
-
-
 // Example 2 - Комбіновані оператори
 // Заміни вираз перевизначення комбінованим оператором +=.
 
 // let students = 100;
-// students = students + 50;
+
+// // students = students + 50;
+
+// students +=students
 // console.log(students);
+
 // Example 3 - Пріоритет операторів
 // Розбери пріоритет операторів в інструкції привласнення значення змінної result.
 
 // const result = 108 + 223 - 2 * 5;
 // console.log(result);
+
 // Example 4 - Клас Math
 // Напиши скрипт, який виводить у консоль заокруглені вгору/вниз і т.д. значення змінної value. Використовуй методи Math.floor(), Math.ceil() та Math.round(). Перевір що буде в консолі при значеннях 27.3 та 27.9.
 
@@ -29,12 +32,11 @@
 // const result = Math.floor(value);
 // console.log(result);
 
-// const result = Math.ceil(value);
-// console.log(result);
+// const result1 = Math.ceil(value);
+// console.log(result1);
 
-// const result = Math.round(value);
-// console.log(result)
-
+// const result2 = Math.round(value);
+// console.log(result2)
 
 // Example 5 - Шаблонні рядки
 // Склади фразу за допомогою шаблонних рядків A has B bots in stock, де A, B - змінні вставлені в рядок.
@@ -58,7 +60,7 @@
 // weight = Number.parseFloat(weight);
 // height = Number.parseFloat(height);
 
-// const bmi = weight / height ** 2;
+// const bmi = (weight / height ** 2). toFixed(1);
 // console.log(bmi); // 28.7
 
 // Example 7 - Оператори порівняння та приведення типів
@@ -93,6 +95,7 @@
 // console.log(undefined == null);
 
 // console.log(undefined === null);
+
 // Example 8 - Логічні оператори
 // Яким буде результат виразів?
 
@@ -139,12 +142,11 @@
 // 450 покаже 07:30
 // 1441 покаже 24:01
 
-// const totalMinutes = 1441;
+// const totalMinutes = 70;
 // const minutes = totalMinutes % 60;
 // const hours = Math.round(totalMinutes / 60);
 
-// console.log(hours,":",minutes);
-
+// console.log(hours,':',minutes);
 
 // Example 10 - Оператор % та методи рядків
 // У змінній $year зберігається рік. Визначте, чи він високосний (у такому році є 29 лютого). Рік буде високосним у двох випадках: або він ділиться на 4, але при цьому не ділиться на 100, або ділиться на 400.
@@ -174,7 +176,6 @@
 //     console.log("Замовлення оформлено, з вами зв'яжеться менеджер")
 // }
 
-
 // Завдання 2
 // Напиши скрипт, який імітує авторизацію адміністратора в панелі управління.
 
@@ -189,8 +190,9 @@
 // Інакше виводити рядок "Невірний пароль"
 // console.log(prompt("Введіть ваш пароль"))
 
-// const user = prompt("Введи пароль");
 // const ADMIN_LOGIN = 'ADMIN';
+// const user = prompt(`${ADMIN_LOGIN} Введи пароль`);
+
 // const ADMIN_PASSWORD = 'jqueryismyjam';
 // let message;
 
@@ -202,8 +204,7 @@
 
 // } else if(user !== 'jqueryismyjam') {
 //     console.log(message = `Я вас не знаю`);
-        
-    
+
 // }  else {
 // console.log(message = `Невірний пароль`);
 // }
@@ -220,21 +221,26 @@
 // Перевіряє чи зможе користувач оплатити замовлення:
 // якщо сума до оплати перевищує кількість кредитів на рахунку, виводь в консоль повідомлення 'Недостатньо коштів на рахунку!'.
 // в іншому випадку необхідно порахувати залишок кредитів на рахунку і вивести повідомлення 'Ви купили [число] дроїдів, на рахунку залишилося [число] кредитів.'.
-// 
+//
 // const sale = prompt("Скільки дроїдів ви бажаєте купити?");
 // const credits = 23580;
 // const pricePerDroid = 3000;
+// let message
 
 // const totalPrice = pricePerDroid * sale;
-// const left = totalPrice - credits;
+// let left = totalPrice - credits;
 
 // if (sale === "" || sale === null) {
-//     console.log('Скасовано користувачем!');
-// }else if(sale < credits); {
-//     console.log('Недостатньо коштів на рахунку!');
-// }else {
-//     console.log('Ви купили число дроїдів, на рахунку залишилося ${left} кредитів.')
+//     message = 'Скасовано користувачем!';
+
+// } else if (sale * pricePerDroid > credits) {
+//     message ='Недостатньо коштів на рахунку!';
+
+// } else {
+//     message = `Ви купили число дроїдів, на рахунку залишилося ${left} кредитів.`
 // }
+
+// console.log(message)
 
 // Завдання 4
 // Користувач може оформити доставку товару до себе в країну, вказавши її при відвідуванні сторінки в prompt. Врахуй, користувач може ввести ім'я країни не тільки буквами нижнього регістра, а наприклад 'кИтАЙ'.
@@ -251,7 +257,8 @@
 // Індія - 80 кредитів
 // Ямайка - 120 кредитів
 
-// const country = prompt("Введи назву країни");
+// const country = prompt("Введи назву країни").toLowerCase();
+
 // switch (country) {
 //   case "":
 //   case null:
@@ -259,27 +266,27 @@
 //     break;
 
 //   case "китай":
-//     console.log('Доставка в ${country} буде коштувати 100 кредитів');
+//     console.log(`Доставка в ${country} буде коштувати 100 кредитів`);
 //     break;
 
 //   case "чилі":
-//     console.log("Доставка в ${country} буде коштувати 250 кредитів");
+//     console.log(`Доставка в ${country} буде коштувати 250 кредитів`);
 //     break;
 
 //   case "Австралія":
-//     console.log("Доставка в ${country} буде коштувати 170 кредитів");
+//     console.log(`Доставка в ${country} буде коштувати 170 кредитів`);
 //     break;
 
 //   case "Індія":
-//     console.log("Доставка в ${country} буде коштувати 80 кредитів");
+//     console.log(`Доставка в ${country} буде коштувати 80 кредитів`);
 //     break;
 
 //   case "Ямайка":
-//     console.log("Доставка в ${country} буде коштувати 120 кредитів");
+//     console.log(`Доставка в ${country} буде коштувати 120 кредитів`);
 //     break;
 
 //   default:
-//     console.log("У вашій країні доставка недоступна");
+//     console.log('У вашій країні доставка недоступна');
 // }
 
 // country === "китай"
@@ -289,24 +296,24 @@
 // country === "китай" && console.log("Доставка в ${country} буде коштувати 100 кредитів");
 
 // const country = prompt("Введи назву країни");
-// console.log(country);
+
 // if (country == "" || country ===null) {
 // console.log(`Введи назву країни`)
 // }
 // else if (country.toLowerCase() === "китай") {
-// console.log('Доставка в ${country} буде коштувати 100 кредитів');
+// console.log(`Доставка в ${country} буде коштувати 100 кредитів`);
 // }
 // else if (country.toLowerCase() === "чилі") {
-// console.log('Доставка в ${country} буде коштувати 250 кредитів');
+// console.log(`Доставка в ${country} буде коштувати 250 кредитів`);
 //     }
 // else if (country.toLowerCase() === "Австралія") {
-// console.log('Доставка в ${country} буде коштувати 170 кредитів');
+// console.log(`Доставка в ${country} буде коштувати 170 кредитів`);
 //         }
 // else if (country.toLowerCase() === "Індія") {
-// console.log('Доставка в ${country} буде коштувати 80 кредитів');
+// console.log(`Доставка в ${country} буде коштувати 80 кредитів`);
 //             }
 // else if (country.toLowerCase() === "Ямайка") {
-// console.log('Доставка в ${country} буде коштувати 120 кредитів');
+// console.log(`Доставка в ${country} буде коштувати 120 кредитів`);
 //                 }
 // else {
 // console.log('У вашій країні доставка недоступна');
@@ -322,8 +329,10 @@
 
 // let input;
 // let total = 0;
-// const num = prompt("Введи число");
-// const message = "Загальна сума чисел дорівнює ${total}";
+// const num1 = Number(prompt("Введи перше число"));
+// const num2 = Number(prompt("Введи друге число"));
+// total = num1 + num2;
+// const message = `Загальна сума чисел дорівнює ${total}`;
 // alert(message);
 
 // Example 6 - if...else та логічні оператори
@@ -336,32 +345,29 @@
 // 6, 7, 8, виводь рядок "Це літо"
 // 9, 10, 11, виводь рядок "Це осінь"
 
-// const Number = prompt(`Введи число від 1 до 12 включно`);
-// // const monthNumber = Math.random() * (12 - 1) + 1;
-// if(Number === 12 || Number === 1 || Number === 2) {
-//     console.log("Це зима")
-    
-// } else if (Number === 3 || Number ===4 || Number === 5) {
-//     console.log("Це весна")
-   
-// } else if (Number === 6 || Number === 7 || Number === 8) {
-//     console.log("Це літо")
+// const numbers = Number(prompt(`Введи число від 1 до 12 включно`));
 
-// } else (Number === 9 || Number === 10 || Number === 11); {
-//     console.log("Це осінь")
+// if (numbers === 12 || numbers === 1 || numbers === 2) {
+//   console.log("Це зима");
+// } else if (numbers === 3 || numbers === 4 || numbers === 5) {
+//   console.log("Це весна");
+// } else if (numbers === 6 || numbers === 7 || numbers === 8) {
+//   console.log("Це літо");
+// } else if (numbers === 9 || numbers === 10 || numbers === 11) {
+//   console.log("Це осінь");
+// } else {
+//   console.log("Ви ввели не правильне число");
 // }
-
 
 // Example 7 - Цикл for
 // Напиши цикл for, який виводить у консоль браузера числа за зростанням від min до max, але тільки якщо число кратне 5.
 
 // const max = 100;
 // const min = 20;
-// for (let i = min; i <= max; i += 1 ) 
+// for (let i = min; i <= max; i += 1 )
 // if(i % 5 === 0) {
 //     console.log(i)
-// } 
-
+// }
 
 // Example 8 - Цикл for
 // Напишіть консольну функцію, на яку користувач вводить суму зп і кількість місяців з допомогою prompt() не забуваємо, що промпт повертає рядок. А податкова обчислює кінцеву суму зп без податків протягом року, Суму податків всього і чистий дохід розробника за кожен місяць. Для обчислення суми з урахуванням відсотків використовуйте цикл for.
@@ -373,30 +379,39 @@
 // for (let i = 1; i < month; i += 1) {
 //     tax += salary * 0.05;
 // }
-// console.log(tax)
+// console.log("tax: ", tax)
 
 // const clearSalary = salary * month - tax;
-// console.log(clearSalary)
+// console.log("clearSalary: ", clearSalary)
+
+
+// Задание 
 
 // const userBrowser = navigator.userAgent
 // console.log(userBrowser)
-  
+
+
+// Задание
 // let num = 3;
 // while (num <= 10) {
 //     console.log(num);
 //     num += 2;
 // }
 
+
+// Задание
 // let iterationNumber = 1;
 // let sum = 0;
 // while (iterationNumber <= 100) {
 //     sum += iterationNumber;
 //     iterationNumber += 1;
-   
+
 // }
 
 // console.log (`Sum is ${sum}`);
 
+
+// Задание
 // let num = 1000;
 // let counter = 0;
 // while (num >= 50) {
