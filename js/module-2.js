@@ -295,8 +295,6 @@
 // console.log(formatTime(450)); // "07:30"
 // console.log(formatTime(1441)); // "24:01"
 
-
-
 // Example 8 - Колекція курсів (includes, indexOf, push і т. д.)
 // Напишіть функції для роботи з колекцією навчальних курсів courses:
 
@@ -515,3 +513,124 @@
 // }
 
 // console.log(total);
+
+// Задача
+
+// Зроби функцію, яка приймає масив будь-яких цілих чисел, що повертає новий масив,
+// Де всі елементи кратні п'яти. ([1,2,5,12,15,21] поверне [5,15])
+
+// function numbers (arr) {
+//     const newArr =[]
+//     for (const number of arr) {
+//         if (number % 5 === 0)
+
+//     }
+// }
+
+// Задача
+// Дізнайтеся скільки елементів з початку масиву треба скласти, щоб у сумі вийшло більше 10-ти.
+// const number = [2, 3, 2, 5, 7, 1];
+
+// function getSum(numbers, sum) {
+//   let total = 0;
+// let count = 0;
+//   for (const element of numbers) {
+//     if (total < sum) {
+//       total += element;
+//       count +=1;
+//     } else {
+//         return count;
+//     }
+
+//   }
+// }
+
+//  console.log(getSum(number, 15))
+
+// задача
+
+// Даний масив із числами. Знайдіть суму перших N елементів до першого нуля.
+// Приклад: [1, 2, 3, 0, 4, 5, 6] - підсумовуємо перші 3 елементи, оскільки далі стоїть елемент із числом 0.
+
+// const numbers = [1, 2, 3, 0, 4, 5, 6];
+
+// function getSum(arr) {
+//   let total = 0;
+//   for (let element of arr) {
+//     if (element !== 0) {
+//       total += element;
+//     } else {
+//       return total;
+//     }
+//   }
+//   return total;
+// }
+
+// console.log(getSum(numbers));
+
+// задача
+
+//Напишіть код, який створює масив елементів, що становлять суму
+// відповідних елементів заданих масивів.
+
+// var arr1 = [1, 2, 3, 4, 5];
+// var arr2 = [4, 5, 6];
+
+// function getSum(arr1, arr2) {
+//   let newArr = [];
+//   const longestArr = arr1.length > arr2.length ? arr1 : arr2;
+//   for (let i = 0; i < longestArr.length; i += 1) {
+//     const a = arr1[i] || 0;
+//     const b = arr2[i] || 0;
+//     newArr.push(a + b);
+//   }
+//   return newArr;
+// }
+
+// console.log(getSum(arr1, arr2));
+
+// задача
+
+// Користувач вводить багатозначне число через promt. Напишіть функцію colonOdd(num),
+// яка приймає число num як аргумент і вставляє двокрапку (:) між двома непарними числами.
+// Наприклад, якщо вводиться число 55639217, то вихід має бути 5:563:921:7.
+
+// function colonOdd(num) {
+//   num = num.toString();
+//   let result = [0];
+//   for (let i = 1; i < num.length; i += 1) {
+//     if (Number(num[i]) % 2 !== 0 && Number(num[i - 1]) % 2 !== 0) {
+//       result += ":" + num[i];
+//     } else {
+//       result += num[i];
+//     }
+//   }
+// }
+// console.log(colonOdd(55639217));
+
+// задача
+
+//Напишіть функцію findCouple(array, number), яка шукає в масиві всі пари цілих чисел,
+//сума яких дорівнює заданому значенню.
+
+// var num = 5;
+// var arr = [1, 6, 5, 2, 7, 5, 1, 4, 3, 9, 8, 11, 10, 18];
+
+// function findCouple(array, number) {
+//   let newArr = [];
+//   for (let i = 0; i < array.length; i += 1) {
+//     for (let j = 0; j < array.length; j += 1) {
+//       if (array[i] + array[j] === number && array[i] !== array[j]) {
+//         newArr.push(array[i], array[j]);
+//       }
+//     }
+//   }
+//    return [...new Set(arr)]
+// }
+
+// console.log(findCouple(arr, num));
+
+// function removeDuplicates(arr) {
+//   return [...new Set(arr)];
+// }
+
