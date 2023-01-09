@@ -615,7 +615,7 @@
 
 // function findLargestNumber(numbers) {
 //   return `Найбільше число  ${Math.max(...numbers)}, найменше число ${Math.min(...numbers)}`;
-  
+
 // }
 
 // console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
@@ -636,7 +636,6 @@
 // console.log(updateLoginData({ password: '1111' }));
 
 // console.log(deleteProfile());
-
 
 // ???Example 10 - Order, online shop
 // You need to use the object with an order to solve the next tasks:
@@ -749,3 +748,118 @@
 //   findSearchWordInItemName(order, 'Nike')
 // ); // 2
 // console.log('isIdIncludesInOrder', isIdIncludesInOrder(order, 389)); // true
+
+// ?????let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 50,
+// };
+//  let sum = 0
+//  let value = Object.values(salaries)
+//  for (const salary of value) {
+//     sum += value
+//  }
+//  console.log(sum)
+
+//  Створіть функцію multiplyNumeric(obj), яка збільшує всі числові властивості об'єкта obj на 2.
+// Зверніть увагу, що multiplyNumeric не потрібно нічого повертати. Слід безпосередньо змінювати об'єкт.
+// P.S. Використовуйте тип, щоб перевірити, чи значення властивості числове.
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu",
+// };
+// const multiplyNumeric = (menu) => {
+//   for (let key in menu) {
+//     // console.log(key)
+//     if (menu.hasOwnProperty(key) && typeof menu(key) === "number") {
+//       menu[key] *= 2;
+//     }
+//   }
+//   return menu;
+// };
+
+// console.log(multiplyNumeric(menu));
+
+// ?????Написати об'єкт ladder - об'єкт, який дозволяє підніматися вгору та спускатися.
+// Приклад роботи має бути таким:
+
+// const ladder = {
+//   step: 0,
+//   up() {
+//     this.step += 1;
+//   },
+//   down() {
+//     this.step -+ 1;
+//   },
+//   showStep() {
+//     console.log()
+//   }
+
+// };
+
+// ladder.showStep(); // 0 (треба виводить сходинку на яку ми знаходимося)
+// ladder.up();
+// ladder.up();
+// ladder.showStep(); // 2
+// ladder.down();
+// ladder.showStep(); // 1
+
+//Задача.Напишіть програму JavaScript для видалення властивості rollno з наступного об'єкта.
+
+// const student = {
+//   name: "David Rayy",
+//   sclass: "VI",
+//   rollno: 12,
+// };
+
+// delete student.rollno;
+// console.log(student)
+
+//Задача. Опис завдання: Напишіть функцію, яка повертає новий об'єкт без зазначених значень.
+// Очікуваний результат: ({ a: 1, b: 2 }, 'b') => { a: 1 }
+
+// const data = { a: 1, b: 2, c: 3 };
+// function without(data, ...args) {
+//   const newData = { ...data };
+//   for (const argument of args) {
+//     // console.log(argument)
+//     delete newData["argument"];
+//   }
+//   return newData;
+// }
+
+// console.log(without(data, "b", "c")); // { a: 1 }
+
+// Задача. Напишіть функцію, яка перевіряє, чи є елемент саме простим об'єктом, а не масивом, null тощо.
+//Очікуваний результат: true якщо це об'єкт, false інакше. ({ a: 1 }) => true, ([1, 2, 3]) => false
+
+// const isPlainObject = (data) => {
+//   return typeof data === "object" && !Array.isArray(data) && data !== null;
+// };
+
+// console.log(isPlainObject({ a: 1 })); // true
+// console.log(isPlainObject([])); // false
+// console.log(isPlainObject(null)); // false
+// console.log(isPlainObject(5)); // false
+// console.log(isPlainObject(true)); // false
+
+// Задача// Опис завдання: Напишіть функцію, яка повертає вкладений масив виду `[[key, value], [key, value]]`.
+// Очікуваний результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
+
+// const data = { a: 1, b: 2 };
+
+// // function makePairs(data) {
+// //   return Object.entries(data);
+// // }
+// // або
+
+// function makePairs(data) {
+//   let result = [];
+//   for (const key in data) {
+//     result.push([key, data[key]]);
+//   }
+//   return result;
+// }
+
+// console.log(makePairs(data)); // [['a', 1], ['b', 2]]
