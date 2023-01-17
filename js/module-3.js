@@ -863,3 +863,4 @@
 // }
 
 // console.log(makePairs(data)); // [['a', 1], ['b', 2]]
+
