@@ -780,81 +780,180 @@
 
 // Модуль 4. Заняття 8. Перебираючі методи масиву
 // Practice 1 - CARS
+// const cars = [
+//   {
+//     make: "Honda",
+//     model: "CR-V",
+//     type: "suv",
+//     amount: 14,
+//     price: 24045,
+//     onSale: true,
+//   },
+//   {
+//     make: "Honda",
+//     model: "Accord",
+//     type: "sedan",
+//     amount: 2,
+//     price: 22455,
+//     onSale: true,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "Mazda 6",
+//     type: "sedan",
+//     amount: 8,
+//     price: 24195,
+//     onSale: false,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "CX-9",
+//     type: "suv",
+//     amount: 7,
+//     price: 31520,
+//     onSale: true,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "4Runner",
+//     type: "suv",
+//     amount: 19,
+//     price: 34210,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Sequoia",
+//     type: "suv",
+//     amount: 16,
+//     price: 45560,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Tacoma",
+//     type: "truck",
+//     amount: 4,
+//     price: 24320,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "F-150",
+//     type: "truck",
+//     amount: 11,
+//     price: 27110,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Fusion",
+//     type: "sedan",
+//     amount: 13,
+//     price: 22120,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Explorer",
+//     type: "suv",
+//     amount: 6,
+//     price: 31660,
+//     onSale: false,
+//   },
+// ];
 // Напиши функції які за допомогою методів масиву, що перебирають (жодних for, splice і т. д.) виконують такі операції над масивом об'єктів користувачів із файлу cars.js.
 
 // Example 1 - Метод map
 // Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
 
-// const getModels = cars => {};
+// const getModels = (cars) => cars.map((car) => car.model);
 
 // console.table(getModels(cars));
 // Example 2 - Метод map
 // Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним значенням властивості price залежно від переданої знижки.
 
-// const makeCarsWithDiscount = (cars, discount) => {};
+// const makeCarsWithDiscount = (cars, discount) => cars.map(car => car.price - car.price * discount);
 
 // console.table(makeCarsWithDiscount(cars, 0.2));
 // console.table(makeCarsWithDiscount(cars, 0.4));
 // Example 3 - Метод filter
 // Нехай функція filterByPrice повертає масив автомобілів ціна яких менша ніж значення параметра threshold.
 
-// const filterByPrice = (cars, threshold) => {};
+// const filterByPrice = (cars, threshold) => cars.filter(car => car.price < threshold);
 
 // console.table(filterByPrice(cars, 30000));
 // console.table(filterByPrice(cars, 25000));
 // Example 4 - Метод filter
 // Нехай функція getCarsWithDiscount повертає масив автомобілів властивість onSale яких true.
 
-// const getCarsWithDiscount = cars => {};
+// const getCarsWithDiscount = cars => cars.filter(car => car.onSale === true);
 
 // console.table(getCarsWithDiscount(cars));
 // Example 5 - Метод filter
 // Нехай функція getCarsWithType повертає масив автомобілів тип яких збігається зі значенням параметра type.
 
-// const getCarsWithType = (cars, type) => {};
+// const getCarsWithType = (cars, type) => cars.filter(car => car.type === type);
 
 // console.table(getCarsWithType(cars, 'suv'));
 // console.table(getCarsWithType(cars, 'sedan'));
 // Example 6 - Метод find
-// const getCarByModel = (cars, model) => {};
+// const getCarByModel = (cars, model) => cars.find(car => car.model === model);
 
 // console.log(getCarByModel(cars, 'F-150'));
 // console.log(getCarByModel(cars, 'CX-9'));
 // Example 7 - Метод sort
 // Нехай функція sortByAscendingAmount повертає новий масив автомобілів відсортований за зростанням значення якості amount.
 
-// const sortByAscendingAmount = cars => {};
+// const sortByAscendingAmount = cars => {
+//   return [...cars].sort((a,b) => a.amount - b.amount)
+// };
 
 // console.table(sortByAscendingAmount(cars));
 // Example 8 - Метод sort
 // Нехай функція sortByDescendingPrice повертає новий масив автомобілів відсортований за зменшенням значення властивості price.
 
-// const sortByDescendingPrice = cars => {};
+// const sortByDescendingPrice = cars => {
+//   return cars.sort((a, b) => a.price - b.price)
+// };
 
 // console.table(sortByDescendingPrice(cars));
 // Example 9 - Метод sort
 // Нехай функція sortByModel повертає новий масив автомобілів відсортований за назвою моделі в алфавітному та зворотному алфавітному порядку, в залежності від значення параметра order.
 
-// const sortByModel = (cars, order) => {};
+// const sortByModel = (cars, order) => {
+//   return cars.sort((a, b) => a.model.localeCompare(b.model));
+//   // return cars.sort((a, b) => b.model.localeCompare(a.model));
 
-// console.table(sortByModel(cars, 'asc'));
-// console.table(sortByModel(cars, 'desc'));
+// };
+
+// console.table(sortByModel(cars, "asc"));
+// console.table(sortByModel(cars, "desc"));
 // Example 10 - Метод reduce
 // Нехай функція getTotalAmount повертає загальну кількість автомобілів (значення властивостей amount).
 
-// const getTotalAmount = cars => {};
+// const getTotalAmount = (cars) => cars.reduce((totalCars, {amount}) => {
+//   return totalCars += amount
+// }, 0);
+//або, якщо в масив внести результат:
+
+// const getTotalAmount = (cars) =>
+//   cars.reduce((totalCars, { amount }) => {
+//     totalCars.push(amount);
+//     return totalCars;
+//   }, []);
 
 // console.log(getTotalAmount(cars));
 // Example 11 - Ланцюжки методів
 // Нехай функція getAvailableCarNames повертає масив моделей автомобілів, але тільки тих, які зараз на розпродажі.
 
-// const getModelsOnSale = cars => {};
+// const getModelsOnSale = cars => cars.filter(car => car.onSale === true).map(car => car.model);
 
 // console.table(getModelsOnSale(cars));
 // Example 12 - Ланцюжки методів
 // Нехай функція getSortedCarsOnSale повертає масив автомобілів на розпродажі (Властивість onSale), відсортованих за зростанням ціни.
 
-// const getSortedCarsOnSale = cars => {};
+// const getSortedCarsOnSale = cars => cars.filter(car => car.onSale === true).sort((a, b) => a.price - b.price);
 
 // console.table(getSortedCarsOnSale(cars));
 // Practice 2 - USERS
@@ -862,92 +961,92 @@
 
 /////////////////////////////////////////////
 
-const users = [
-  {
-    id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    skills: ["ipsum", "lorem"],
-    gender: "male",
-    age: 37,
-  },
-  {
-    id: "7a3cbd18-57a1-4534-8e12-1caad921bda1",
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
-    gender: "female",
-    age: 34,
-  },
-  {
-    id: "88beb2f3-e4c2-49f3-a0a0-ecf957a95af3",
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
-    gender: "male",
-    age: 24,
-  },
-  {
-    id: "249b6175-5c30-44c6-b154-f120923736f5",
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    skills: ["adipisicing", "irure", "velit"],
-    gender: "female",
-    age: 21,
-  },
-  {
-    id: "334f8cb3-eb04-45e6-abf4-4935dd439b70",
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong"],
-    isActive: true,
-    balance: 3951,
-    skills: ["ex", "culpa", "nostrud"],
-    gender: "male",
-    age: 27,
-  },
-  {
-    id: "150b00fb-dd82-427d-9faf-2879ea87c695",
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman"],
-    isActive: false,
-    balance: 1498,
-    skills: ["non", "amet", "ipsum"],
-    gender: "male",
-    age: 38,
-  },
-  {
-    id: "e1bf46ab-7168-491e-925e-f01e21394812",
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    skills: ["lorem", "veniam", "culpa"],
-    gender: "female",
-    age: 39,
-  },
-];
+// const users = [
+//   {
+//     id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     id: "7a3cbd18-57a1-4534-8e12-1caad921bda1",
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     id: "88beb2f3-e4c2-49f3-a0a0-ecf957a95af3",
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     id: "249b6175-5c30-44c6-b154-f120923736f5",
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     id: "334f8cb3-eb04-45e6-abf4-4935dd439b70",
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     id: "150b00fb-dd82-427d-9faf-2879ea87c695",
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     id: "e1bf46ab-7168-491e-925e-f01e21394812",
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
 
 ///////////////////////////////////////////////
 // Example 1
@@ -1054,19 +1153,84 @@ const users = [
 //       return allSkills;
 //     }, [])
 //     .filter((friends, index, arr) => arr.indexOf(friends) === index);
+
 // };
 
 // console.log(getSortedUniqueSkills(users));
+
+//або:
+
+// const getSortedUniqueSkills = (users) => {
+//   const notUniqueSkills = users.reduce((allSkills, { skills }) => {
+//     allSkills.push(...skills);
+//     return allSkills;
+//   }, []);
+//   const uniqueSkills = [...new Set(notUniqueSkills)];
+//   return uniqueSkills;
+// };
+// console.log(getSortedUniqueSkills(users));
+
 // ['adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit' , 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam'
 
 // Practice 3 - CHARACTERS
 // Напиши функції які за допомогою методів масиву, що перебирають (жодних for, splice і т. д.) виконують такі операції над масивом об'єктів героїв із файлу characters.js.
 
+// const characters = [
+//   {
+//     name: "Luke Skywalker",
+//     height: "172",
+//     mass: "77",
+//     eye_color: "blue",
+//     gender: "male",
+//   },
+//   {
+//     name: "Darth Vader",
+//     height: "202",
+//     mass: "136",
+//     eye_color: "yellow",
+//     gender: "male",
+//   },
+//   {
+//     name: "Leia Organa",
+//     height: "150",
+//     mass: "49",
+//     eye_color: "brown",
+//     gender: "female",
+//   },
+//   {
+//     name: "Anakin Skywalker",
+//     height: "188",
+//     mass: "84",
+//     eye_color: "blue",
+//     gender: "male",
+//   },
+// ];
+
 // MAP
+//////////////////////////////////////////
 // Get an array of all names
+// const getcharactersNames = (characters) => characters.map(character => character.name)
+
+// console.log(getcharactersNames(characters));
+////////////////////////////////////////
 // Get an array of all heights
+// const getCharactersHeight = (characters) => characters.map(character => character.height)
+// console.table(getCharactersHeight(characters))
+/////////////////////////////////////////////
 // Get an array of objects with just name and height properties
-// Get an array of all first names
+
+// const getCharactersHeight = (characters) =>
+//   characters.map((character) => character.height);
+// console.log(getCharactersHeight(characters));
+// const getCharactersName = (characters) =>
+//   characters.map((character) => character.name);
+// console.log(getCharactersName(characters));
+
+////////////////////////////////////////
+//???????? Get an array of all first names
+// const firstName = (characters) => characters.map((character) => character.name);
+// console.table(firstName(characters));
+
 // REDUCE
 // Get the total mass of all characters
 // Get the total height of all characters
