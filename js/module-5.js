@@ -473,3 +473,125 @@
 
 ///////////////////////////////////////////
 
+// Example 1 - Коллбек функції
+// Напишіть наступні функції:
+
+// createProduct(obj, callback) - приймає об'єкт товару без id, а також коллбек. Функція створює об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому створений об'єкт.
+// logProduct(product) - колббек приймаючий об'єкт продукту і логуючий його в консоль
+// logTotalPrice(product) - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
+// // Рішення
+// function createProduct(obj, callback) {
+//   obj.id = Math.random() * (100 - 1) + 1;
+//   callback(obj);
+// }
+
+// function logProduct(obj) {
+//     console.log(obj);
+// }
+
+// function logTotalPrice(obj) {
+//     console.log(`загальна вартість ${price * quantity} `);
+// }
+
+// createProduct({ name: "🍎", price: 30, quantity: 3 }, logProduct);
+// createProduct({ name: "🍋", price: 20, quantity: 5 }, logTotalPrice);
+// Example 2 - Коллбек функції
+// Додайте об'єкт account методи withdraw(amount, onSuccess, onError) та deposit(amount, onSuccess, onError), де перший параметр це сума операції, а другий та третій - коллбеки.
+
+// Метод withdraw викликає onError якщо amount більше TRANSACTION_LIMIT або this.balance, і onSuccess в іншому випадку.
+
+// Метод deposit викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку.
+
+// // Рішення
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//   username: "Jacob",
+//   balance: 400,
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT || amount > this.balance) {
+//       onError();
+//       return;
+//     }
+//     onSuccess();
+//   },
+//   deposit(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT || amount <= 0) {
+//       onError();
+//       return;
+//     }
+//     onSuccess();
+//   },
+// };
+
+// function handleSuccess() {}
+// function handleError() {}
+
+// account.withdraw(2000, handleSuccess, handleError);
+// account.withdraw(600, handleSuccess, handleError);
+// account.withdraw(300, handleSuccess, handleError);
+// account.deposit(1700, handleSuccess, handleError);
+// account.deposit(0, handleSuccess, handleError);
+// account.deposit(-600, handleSuccess, handleError);
+// account.deposit(600, handleSuccess, handleError);
+/////////////////////////////////////////
+
+// Напиши метод add(), який приймає об'єкт юзера і додає його в список контактів contacts. На виході метод add повертає масив об'єктів(contacts) з доданими властивостивостями id та createdAt, також list зі значенням "default" якщо немає такої властивості, i favorite зі значенням "false" якщо немає такої властивості. Напишими метод update який приймає імя юзера якого треба обновити, та обєкт нових даних. Напиши метод delete, який приймає contactName і його ж видаляє. А також напиши метод getContacts який повертає всю телефонну книгу
+
+// const phonebook = {
+//   contacts: [],
+
+//   getContacts() {
+//     return this.contacts
+//   },
+//   add(contact) {
+//     const newContact = { id: this.generateId(), createdAt: this.getDate(), list: "default", favorite: "false", ...contact}
+//     this.contacts.push(contact)
+//   },
+//   update(contactNameToUpdate, newContactData){
+//     const contactToUpdate = this.contacts.find(({name}) => name === contactNameToUpdate)
+//     const updateContact = {...contactToUpdate, ...newContactData}
+//     this.delete(contactNameToUpdate)
+//     add(updateContact)
+//   },
+//   delete(contactName) {
+//     this.contacts = this.contacts.filter(({name})=> name !==contactName)
+//   },
+
+//   generateId() {
+//     return '_' + Math.random().toString(36).substr(2, 5);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },
+// };
+
+// phonebook.add({
+//   name: 'Sofia',
+//   phone: '+380786387268',
+//   list: 'friends',
+//   img: '👩🏼',
+//   favorite: true,
+// });
+// phonebook.add({
+//   name: 'Marina',
+//   phone: '+3806578454533',
+// });
+// phonebook.add({
+//   name: 'Poly',
+//   phone: '+380657845543',
+//   img: '👩🏼‍🔧',
+// });
+// console.table(phonebook.getContacts());
+
+// phonebook.update('Poly', {
+//   name: 'Polina',
+//   phone: '+380657845543',
+//   img: '👩🏼‍🎤',
+//   list: 'family',
+//   favorite: true,
+// });
+// console.table(phonebook.getContacts());
+
+// phonebook.delete('Marina');
+// console.table(phonebook.getContacts());
