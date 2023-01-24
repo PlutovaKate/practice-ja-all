@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
 
-    <!-- <script src ='./js/module-all.js' type="module"></script> -->
+<body>
+<div>
+  <input id="passwordInput" type = 'text'/>
+  <button id = "passwordButton">ПРИХОВАТИ</button>
+  </div>
+
+  <!-- <script src ='./js/module-all.js' type="module"></script> -->
   <!-- <script src ='./js/module-1.js' type="module"></script> -->
   <!-- <script src ='./js/module-2.js' type="module"></script> -->
   <!-- <script src ='./js/module-3.js' type="module"></script> -->
@@ -19,3 +24,273 @@
 
 </body>
 </html>
+
+<!-- <div>
+  <button id = "alertButton">SHOW ME</button>
+  <input id="alertInput" type = 'text'/>
+</div> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+          body {
+            font-family: Arial, Helvetica, sans-serif;
+          }
+
+          /* Full-width input fields */
+          input[type='text'],
+          input[type='password'] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+          }
+
+          /* Set a style for all buttons */
+          button {
+            background-color: #04aa6d;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+          }
+
+          button:hover {
+            opacity: 0.8;
+          }
+
+          /* Extra styles for the cancel button */
+          .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+          }
+
+          /* Center the image and position the close button */
+          .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+          }
+
+          img.avatar {
+            width: 40%;
+            border-radius: 50%;
+          }
+
+          .container {
+            padding: 16px;
+          }
+
+          span.psw {
+            float: right;
+            padding-top: 16px;
+          }
+
+          /* The Modal (background) */
+          .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            padding-top: 60px;
+          }
+
+          /* Modal Content/Box */
+          .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+          }
+
+          /* The Close Button (x) */
+          .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+          }
+
+          .close:hover,
+          .close:focus {
+            color: red;
+            cursor: pointer;
+          }
+
+          /* Add Zoom Animation */
+          .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s;
+          }
+
+          @-webkit-keyframes animatezoom {
+            from {
+              -webkit-transform: scale(0);
+            }
+            to {
+              -webkit-transform: scale(1);
+            }
+          }
+
+          @keyframes animatezoom {
+            from {
+              transform: scale(0);
+            }
+            to {
+              transform: scale(1);
+            }
+          }
+
+          /* Change styles for span and cancel button on extra small screens */
+          @media screen and (max-width: 300px) {
+            span.psw {
+              display: block;
+              float: none;
+            }
+            .cancelbtn {
+              width: 100%;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <h2>Modal Login Form</h2>
+        <button id="login_btn" style="width: auto">Login</button>
+
+        <div id="modal" class="modal">
+          <form
+            class="modal-content animate"
+            action="/action_page.php"
+            method="post"
+          >
+            <div class="imgcontainer">
+              <span id="closeModal_btn" class="close" title="Close Modal"
+                >&times;</span
+              >
+              <img
+                src="https://www-w3schools-com.translate.goog/howto/img_avatar2.png"
+                alt="Avatar"
+                class="avatar"
+              />
+            </div>
+
+            <div class="container">
+              <label for="name"><b>Username</b></label>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                name="name"
+                required
+              />
+
+              <label for="password"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                required
+              />
+
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" value="false" name="remember" />
+                Remember me
+              </label>
+            </div>
+
+            <div class="container" style="background-color: #f1f1f1">
+              <button type="button" class="cancelbtn" id="cancle_btn">
+                Cancel
+              </button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+         <script src ='./js/module-6.js' type="module"></script>
+      </body>
+    </html>
+  </body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* Slideshow container */
+    .slider {
+      max-width: 500px;
+      position: relative;
+      transform: translate(0%, 60%);
+      margin: auto;
+    }
+    img {
+      vertical-align: middle;
+      width: 100%;
+    }
+    /* Next & previous buttons */
+    #previous,
+    #next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    #next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    #previous:hover,
+    #next:hover {
+      color: white;
+      background-color: rgba(61, 61, 61, 0.8);
+    }
+  </style>
+  <body>
+    <div class="slider">
+      <button id="previous">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+  </body>
+  <script src ='./js/module-6.js' type="module"></script>
+</html> -->
